@@ -15,13 +15,13 @@ function playRound(playerSelection, computerSelection) {
         case "rock":
             switch (computerSelection) {
                 case "rock":
-                    console.log("Tie! Rock vs rock");
+                    return "Tie! Rock vs rock";
                     break;
                 case "paper":
-                    console.log("You lose! Paper beats rock");
+                    return "You lose! Paper beats rock";
                     break;
                 case "scissors":
-                    console.log("You win! Scissors beat rock");
+                    return "You win! Scissors beat rock";
                 default:
                     break;
             }
@@ -29,13 +29,13 @@ function playRound(playerSelection, computerSelection) {
         case "paper":
             switch (computerSelection) {
                 case "rock":
-                    console.log("You win! Paper beats rock");
+                    return "You win! Paper beats rock";
                     break;
                 case "paper":
-                    console.log("Tie! Paper vs paper");
+                    return "Tie! Paper vs paper";
                     break;
                 case "scissors":
-                    console.log("You lose! Scissors beats paper");
+                    return "You lose! Scissors beats paper";
                 default:
                     break;
             }
@@ -43,42 +43,44 @@ function playRound(playerSelection, computerSelection) {
         case "scissors":
             switch (computerSelection) {
                 case "rock":
-                    console.log("You lose! Rock beats scissors");
+                    return "You lose! Rock beats scissors";
                     break;
                 case "paper":
-                    console.log("You win! Scissors beats paper");
+                    return "You win! Scissors beats paper";
                     break;
                 case "scissors":
-                    console.log("Tie! Scissors vs scissors");
+                    return "Tie! Scissors vs scissors";
                 default:
                     break;
             }
             break;
 
         default:
+            return "invalid"
             break;
     }
 }
 
 function game() {
+    let playerSelection = "";
+    let computerSelection = computerPlay();
 
-    let playerSelection = prompt("enter rock, paper, or scissors");
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    
-    let playerSelection = prompt("enter rock, paper, or scissors");
-    const computerSelection = computerPlay();
+    playerSelection = prompt("enter rock, paper, or scissors");
     playRound(playerSelection, computerSelection);
 
-    let playerSelection = prompt("enter rock, paper, or scissors");
-    const computerSelection = computerPlay();
+    playerSelection = prompt("enter rock, paper, or scissors");
+    computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
 
-    let playerSelection = prompt("enter rock, paper, or scissors");
-    const computerSelection = computerPlay();
+    playerSelection = prompt("enter rock, paper, or scissors");
+    computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
 
-    let playerSelection = prompt("enter rock, paper, or scissors");
-    const computerSelection = computerPlay();
+    playerSelection = prompt("enter rock, paper, or scissors");
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+
+    playerSelection = prompt("enter rock, paper, or scissors");
+    computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
 }
