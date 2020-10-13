@@ -9,7 +9,6 @@ function computerPlay() {
 
 
 function playRound(playerSelection, computerSelection) {
-    // player picks rock
     const playerPickLowerCase = playerSelection.toLowerCase();
     switch (playerPickLowerCase) {
         case "rock":
@@ -64,23 +63,50 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let playerSelection = "";
     let computerSelection = computerPlay();
+    let computerScore = 0;
+    let playerScore = 0;
 
-    playerSelection = prompt("enter rock, paper, or scissors");
-    playRound(playerSelection, computerSelection);
+    
+    playerSelection = prompt(`enter rock, paper, or scissors \r\n You: ${ playerScore } PC: ${ computerScore }`);
+    if (playRound(playerSelection, computerSelection).substring(0, 5) == "You w") {
+        playerScore += 1;
+    } else if (playRound(playerSelection, computerSelection).substring(0, 5) == "You l") {
+        computerScore += 1;
+    }
+    console.log(playRound(playerSelection, computerSelection));
 
-    playerSelection = prompt("enter rock, paper, or scissors");
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    playerSelection = prompt(`enter rock, paper, or scissors \r\n You: ${playerScore} PC: ${computerScore}`);
+    if (playRound(playerSelection, computerSelection).substring(0, 5) == "You w") {
+        playerScore += 1;
+    } else if (playRound(playerSelection, computerSelection).substring(0, 5) == "You l") {
+        computerScore += 1;
+    }
+    console.log(playRound(playerSelection, computerSelection));
 
-    playerSelection = prompt("enter rock, paper, or scissors");
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    playerSelection = prompt(`enter rock, paper, or scissors \r\n You: ${playerScore} PC: ${computerScore}`);
+    if (playRound(playerSelection, computerSelection).substring(0, 5) == "You w") {
+        playerScore += 1;
+    } else if (playRound(playerSelection, computerSelection).substring(0, 5) == "You l") {
+        computerScore += 1;
+    }
+    console.log(playRound(playerSelection, computerSelection));
 
-    playerSelection = prompt("enter rock, paper, or scissors");
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    playerSelection = prompt(`enter rock, paper, or scissors \r\n You: ${playerScore} PC: ${computerScore}`);
+    if (playRound(playerSelection, computerSelection).substring(0, 5) == "You w") {
+        playerScore += 1;
+    } else if (playRound(playerSelection, computerSelection).substring(0, 5) == "You l") {
+        computerScore += 1;
+    }
+    console.log(playRound(playerSelection, computerSelection));
 
-    playerSelection = prompt("enter rock, paper, or scissors");
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    playerSelection = prompt(`enter rock, paper, or scissors \r\n You: ${playerScore} PC: ${computerScore}`);
+    if (playRound(playerSelection, computerSelection).substring(0, 5) == "You w") {
+        playerScore += 1;
+    } else if (playRound(playerSelection, computerSelection).substring(0, 5) == "You l") {
+        computerScore += 1;
+    }
+    
+    alert(`FINAL SCORE: \r\n YOU: ${playerScore} PC: ${computerScore}`)
+
+
 }
